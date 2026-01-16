@@ -1,60 +1,83 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>Pyjamas Ayoub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayoub Shop - متجر أيوب للبيجامات</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Pyjamas Ayoub</h1>
-    <p>Pyjamas confortables & élégants pour hommes</p>
+<header>
+  <div class="container">
+    <h1>Ayoub Shop</h1>
+    <p>أفضل البيجامات المريحة والأنيقة للرجال</p>
+  </div>
+</header>
 
-    <div class="buttons">
-      <a href="#produits" class="cta">Commander</a>
-      <a href="https://wa.me/212626508323" class="cta whatsapp">
-        Contacter sur WhatsApp
-      </a>
+<section class="products container">
+
+  <!-- Produit 1 -->
+  <div class="product">
+    <img src="https://via.placeholder.com/300x400?text=Pyjama+1" alt="بيجامة رجالية">
+    <h2>بيجامة كلاسيكية</h2>
+    <p>مريحة، ناعمة، مثالية لجميع المواسم</p>
+
+    <div class="options">
+      <label>المقاس:</label>
+      <select id="size1">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+
+      <label>اللون:</label>
+      <select id="color1">
+        <option>أسود</option>
+        <option>أزرق</option>
+        <option>رمادي</option>
+      </select>
     </div>
-  </header>
 
-  <section id="produits">
-    <h2>Nos Pyjamas</h2>
+    <button onclick="orderProduct('بيجامة كلاسيكية','size1','color1')">اطلب الآن</button>
+  </div>
 
-    <div class="products">
-      <div class="product">
-        <img src="https://via.placeholder.com/300x400?text=Pyjama+1" alt="Pyjama 1">
-        <h3>Pyjama Classique</h3>
-        <p>Confortable, doux et idéal pour toutes les saisons.</p>
-      </div>
+  <!-- Produit 2 -->
+  <div class="product">
+    <img src="https://via.placeholder.com/300x400?text=Pyjama+2" alt="بيجامة قطنية">
+    <h2>بيجامة قطنية</h2>
+    <p>تصميم عصري مع نسيج قابل للتنفس</p>
 
-      <div class="product">
-        <img src="https://via.placeholder.com/300x400?text=Pyjama+2" alt="Pyjama 2">
-        <h3>Pyjama Moderne</h3>
-        <p>Design moderne avec tissu respirant.</p>
-      </div>
+    <div class="options">
+      <label>المقاس:</label>
+      <select id="size2">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
 
-      <div class="product">
-        <img src="https://via.placeholder.com/300x400?text=Pyjama+3" alt="Pyjama 3">
-        <h3>Pyjama Premium</h3>
-        <p>Qualité supérieure pour un confort maximal.</p>
-      </div>
+      <label>اللون:</label>
+      <select id="color2">
+        <option>أبيض</option>
+        <option>كحلي</option>
+        <option>بني</option>
+      </select>
     </div>
-  </section>
 
-  <section class="contact">
-    <h2>Commander maintenant</h2>
-    <p>Contactez-nous directement sur WhatsApp</p>
+    <button onclick="orderProduct('بيجامة قطنية','size2','color2')">اطلب الآن</button>
+  </div>
 
-    <a href="https://wa.me/212626508323" class="cta whatsapp">
-      Commander sur WhatsApp
-    </a>
-  </section>
+</section>
 
-  <footer>
-    <p>© 2026 Pyjamas Ayoub – Tous droits réservés</p>
-  </footer>
+<footer>
+  <div class="container">
+    <p>للطلب عبر واتساب: <a href="https://wa.me/212626508323" target="_blank">0626508323 📞</a></p>
+    <p>© 2026 Ayoub Shop - جميع الحقوق محفوظة</p>
+  </div>
+</footer>
 
+<script src="script.js"></script>
 </body>
 </html>
