@@ -1,82 +1,97 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayoub Shop - متجر أيوب للبيجامات</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Ayoub Shop - Chaussures Sport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="container">
+<!-- HEADER -->
+<header class="header">
     <h1>Ayoub Shop</h1>
-    <p>أفضل البيجامات المريحة والأنيقة للرجال</p>
-  </div>
+    <p>Chaussures sport premium</p>
+    <span>📞 0626508323</span>
 </header>
 
-<section class="products container">
-
-  <!-- Produit 1 -->
-  <div class="product">
-    <img src="https://via.placeholder.com/300x400?text=Pyjama+1" alt="بيجامة رجالية">
-    <h2>بيجامة كلاسيكية</h2>
-    <p>مريحة، ناعمة، مثالية لجميع المواسم</p>
-
-    <div class="options">
-      <label>المقاس:</label>
-      <select id="size1">
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
-      </select>
-
-      <label>اللون:</label>
-      <select id="color1">
-        <option>أسود</option>
-        <option>أزرق</option>
-        <option>رمادي</option>
-      </select>
+<!-- VIDEO HERO -->
+<section class="hero">
+    <video autoplay muted loop>
+        <source src="video/shoes.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+        <h2>Performance & Style</h2>
+        <p>Les meilleures chaussures sport pour vous</p>
     </div>
-
-    <button onclick="orderProduct('بيجامة كلاسيكية','size1','color1')">اطلب الآن</button>
-  </div>
-
-  <!-- Produit 2 -->
-  <div class="product">
-    <img src="https://via.placeholder.com/300x400?text=Pyjama+2" alt="بيجامة قطنية">
-    <h2>بيجامة قطنية</h2>
-    <p>تصميم عصري مع نسيج قابل للتنفس</p>
-
-    <div class="options">
-      <label>المقاس:</label>
-      <select id="size2">
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
-      </select>
-
-      <label>اللون:</label>
-      <select id="color2">
-        <option>أبيض</option>
-        <option>كحلي</option>
-        <option>بني</option>
-      </select>
-    </div>
-
-    <button onclick="orderProduct('بيجامة قطنية','size2','color2')">اطلب الآن</button>
-  </div>
-
 </section>
 
-<footer>
-  <div class="container">
-    <p>للطلب عبر واتساب: <a href="https://wa.me/212626508323" target="_blank">0626508323 📞</a></p>
-    <p>© 2026 Ayoub Shop - جميع الحقوق محفوظة</p>
-  </div>
-</footer>
+<!-- PRODUCTS -->
+<section class="products">
+    <div class="product-card">
+        <img src="images/shoe1.jpg" alt="Shoe">
+        <h3>Shoe Model X</h3>
+
+        <label>Taille</label>
+        <select>
+            <option>40</option>
+            <option>41</option>
+            <option>42</option>
+            <option>43</option>
+        </select>
+
+        <label>Couleur</label>
+        <select>
+            <option>Noir</option>
+            <option>Blanc</option>
+            <option>Rouge</option>
+        </select>
+
+        <div class="stars">★★★★★</div>
+
+        <button onclick="openForm()">Commander</button>
+    </div>
+
+    <div class="product-card">
+        <img src="images/shoe2.jpg" alt="Shoe">
+        <h3>Shoe Model Y</h3>
+
+        <label>Taille</label>
+        <select>
+            <option>40</option>
+            <option>41</option>
+            <option>42</option>
+            <option>43</option>
+        </select>
+
+        <label>Couleur</label>
+        <select>
+            <option>Noir</option>
+            <option>Blanc</option>
+            <option>Bleu</option>
+        </select>
+
+        <div class="stars">★★★★★</div>
+
+        <button onclick="openForm()">Commander</button>
+    </div>
+</section>
+
+<!-- ORDER FORM -->
+<div class="modal" id="orderForm">
+    <div class="modal-content">
+        <span class="close" onclick="closeForm()">×</span>
+        <h2>Commander</h2>
+
+        <input type="text" placeholder="Nom">
+        <input type="text" placeholder="Prénom">
+        <input type="text" placeholder="Adresse complète">
+        <input type="tel" placeholder="Numéro de téléphone">
+        <input type="text" placeholder="Ville">
+
+        <button class="submit">Envoyer la commande</button>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
