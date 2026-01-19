@@ -1,140 +1,41 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+const modal = document.getElementById("modal");
+const buttons = document.querySelectorAll(".order-btn");
+const closeBtn = document.querySelector(".close");
+const productText = document.getElementById("selectedProduct");
 
-body {
-    margin: 0;
-    background: #f2f2f2;
-}
+let selectedProduct = "";
 
-/* HEADER */
-.header {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
+buttons.forEach(btn => {
+    btn.addEventListener("click", e => {
+        const card = e.target.closest(".product-card");
+        const name = card.querySelector("h3").innerText;
+        const size = card.querySelector(".size").value;
+        const color = card.querySelector(".color").value;
 
-/* HERO */
-.hero {
-    height: 60vh;
-    position: relative;
-}
+        selectedProduct = `${name} | Taille: ${size} | Couleur: ${color}`;
+        productText.innerText = selectedProduct;
 
-.hero video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        modal.style.display = "flex";
+    });
+});
 
-.hero-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background: rgba(0,0,0,0.4);
-}
+closeBtn.onclick = () => modal.style.display = "none";
 
-/* PRODUCTS GRID – DESKTOP FIRST */
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 40px;
-    max-width: 1200px;
-    margin: auto;
-}
+window.onclick = e => {
+    if (e.target === modal) modal.style.display = "none";
+};
 
-/* PRODUCT CARD */
-.product-card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+// WhatsApp order
+document.getElementById("confirm").addEventListener("click", () => {
+    const nom = document.getElementById("nom").value;
+    const prenom = document.getElementById("prenom").value;
+    const adresse = document.getElementById("adresse").value;
+    const tel = document.getElementById("tel").value;
+    const ville = document.getElementById("ville").value;
 
-.product-card img {
-    width: 100%;
-    border-radius: 12px;
-}
+    const message = encodeURIComponent(
+        `Nouvelle commande Ayoub Shop\n\nProduit: ${selectedProduct}\nNom: ${nom}\nPrénom: ${prenom}\nAdresse: ${adresse}\nTéléphone: ${tel}\nVille: ${ville}`
+    );
 
-.product-card select {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-}
-
-.stars {
-    color: gold;
-    font-size: 20px;
-}
-
-.order-btn {
-    width: 100%;
-    padding: 12px;
-    background: black;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/* MODAL OVERLAY */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-box {
-    background: white;
-    padding: 30px;
-    width: 450px;
-    max-width: 90%;
-    border-radius: 15px;
-    position: relative;
-}
-
-.modal-box input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-}
-
-.submit {
-    width: 100%;
-    padding: 12px;
-    background: #fbc531;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-.close {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* TABLET */
-@media (max-width: 1024px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* MOBILE (still works, but secondary) */
-@media (max-width: 600px) {
-    .products {
-        grid-template-columns: 1fr;
-    }
-}
+    window.open(`https://wa.me/212626508323?text=${message}`, "_blank");
+});
