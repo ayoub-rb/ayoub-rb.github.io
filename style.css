@@ -1,11 +1,12 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    margin: 0;
-    background: #f2f2f2;
+    background: #f4f4f4;
 }
 
 /* HEADER */
@@ -14,11 +15,14 @@ body {
     color: white;
     text-align: center;
     padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 /* HERO */
 .hero {
-    height: 60vh;
+    height: 65vh;
     position: relative;
 }
 
@@ -28,33 +32,40 @@ body {
     object-fit: cover;
 }
 
-.hero-text {
+.hero-overlay {
     position: absolute;
     inset: 0;
+    background: rgba(0,0,0,0.5);
+    color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    background: rgba(0,0,0,0.4);
+    text-align: center;
 }
 
-/* PRODUCTS GRID – DESKTOP FIRST */
+/* PRODUCTS */
 .products {
+    max-width: 1400px;
+    margin: auto;
+    padding: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 40px;
-    max-width: 1200px;
-    margin: auto;
 }
 
-/* PRODUCT CARD */
 .product-card {
     background: white;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 18px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
 }
 
 .product-card img {
@@ -65,25 +76,31 @@ body {
 .product-card select {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
+    margin: 6px 0;
 }
 
 .stars {
     color: gold;
-    font-size: 20px;
+    font-size: 22px;
+}
+
+.badges {
+    font-size: 12px;
+    margin: 8px 0;
 }
 
 .order-btn {
-    width: 100%;
+    margin-top: 10px;
     padding: 12px;
+    width: 100%;
     background: black;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
 }
 
-/* MODAL OVERLAY */
+/* MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -96,10 +113,15 @@ body {
 .modal-box {
     background: white;
     padding: 30px;
-    width: 450px;
-    max-width: 90%;
-    border-radius: 15px;
+    width: 500px;
+    border-radius: 20px;
+    animation: zoom 0.3s ease;
     position: relative;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .modal-box input {
@@ -108,12 +130,13 @@ body {
     margin: 8px 0;
 }
 
-.submit {
-    width: 100%;
-    padding: 12px;
-    background: #fbc531;
+#confirm {
+    background: #25d366;
+    color: white;
+    padding: 14px;
     border: none;
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 12px;
     font-size: 16px;
 }
 
@@ -121,7 +144,7 @@ body {
     position: absolute;
     right: 15px;
     top: 10px;
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
 }
 
@@ -132,9 +155,10 @@ body {
     }
 }
 
-/* MOBILE (still works, but secondary) */
+/* MOBILE */
 @media (max-width: 600px) {
     .products {
         grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
