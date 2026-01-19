@@ -2,45 +2,42 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Ayoub Shop - Chaussures Sport</title>
+    <title>Ayoub Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
     <h1>Ayoub Shop</h1>
-    <p>Chaussures sport premium</p>
+    <p>Chaussures Sport Premium</p>
     <span>📞 0626508323</span>
 </header>
 
-<!-- VIDEO HERO -->
+<!-- HERO VIDEO -->
 <section class="hero">
     <video autoplay muted loop>
         <source src="video/shoes.mp4" type="video/mp4">
     </video>
     <div class="hero-text">
         <h2>Performance & Style</h2>
-        <p>Les meilleures chaussures sport pour vous</p>
     </div>
 </section>
 
 <!-- PRODUCTS -->
 <section class="products">
-    <div class="product-card">
-        <img src="images/shoe1.jpg" alt="Shoe">
-        <h3>Shoe Model X</h3>
 
-        <label>Taille</label>
+    <div class="product-card">
+        <img src="images/shoe1.jpg">
+        <h3>Sport Shoe X</h3>
+
         <select>
-            <option>40</option>
-            <option>41</option>
-            <option>42</option>
-            <option>43</option>
+            <option>Taille 40</option>
+            <option>Taille 41</option>
+            <option>Taille 42</option>
+            <option>Taille 43</option>
         </select>
 
-        <label>Couleur</label>
         <select>
             <option>Noir</option>
             <option>Blanc</option>
@@ -49,47 +46,25 @@
 
         <div class="stars">★★★★★</div>
 
-        <button onclick="openForm()">Commander</button>
+        <!-- IMPORTANT: button type="button" -->
+        <button type="button" class="order-btn">Commander</button>
     </div>
 
-    <div class="product-card">
-        <img src="images/shoe2.jpg" alt="Shoe">
-        <h3>Shoe Model Y</h3>
-
-        <label>Taille</label>
-        <select>
-            <option>40</option>
-            <option>41</option>
-            <option>42</option>
-            <option>43</option>
-        </select>
-
-        <label>Couleur</label>
-        <select>
-            <option>Noir</option>
-            <option>Blanc</option>
-            <option>Bleu</option>
-        </select>
-
-        <div class="stars">★★★★★</div>
-
-        <button onclick="openForm()">Commander</button>
-    </div>
 </section>
 
-<!-- ORDER FORM -->
-<div class="modal" id="orderForm">
-    <div class="modal-content">
-        <span class="close" onclick="closeForm()">×</span>
-        <h2>Commander</h2>
+<!-- MODAL FORM (SAME PAGE) -->
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <span class="close">&times;</span>
+        <h2>Formulaire de commande</h2>
 
         <input type="text" placeholder="Nom">
         <input type="text" placeholder="Prénom">
         <input type="text" placeholder="Adresse complète">
-        <input type="tel" placeholder="Numéro de téléphone">
+        <input type="tel" placeholder="Téléphone">
         <input type="text" placeholder="Ville">
 
-        <button class="submit">Envoyer la commande</button>
+        <button class="submit">Confirmer</button>
     </div>
 </div>
 
