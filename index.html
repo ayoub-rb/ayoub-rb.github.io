@@ -2,8 +2,16 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Ayoub Shop</title>
+    <title>Ayoub Shop | Chaussures Sport</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Ayoub Shop - Chaussures sport premium. Livraison rapide et paiement à la livraison.">
+    <meta name="keywords" content="chaussures sport, sneakers maroc, ayoub shop">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,8 +27,9 @@
     <video autoplay muted loop>
         <source src="video/shoes.mp4" type="video/mp4">
     </video>
-    <div class="hero-text">
+    <div class="hero-overlay">
         <h2>Performance & Style</h2>
+        <p>Commandez maintenant – Stock limité</p>
     </div>
 </section>
 
@@ -28,43 +37,66 @@
 <section class="products">
 
     <div class="product-card">
-        <img src="images/shoe1.jpg">
+        <img src="images/shoe1.jpg" alt="Sport Shoe X">
         <h3>Sport Shoe X</h3>
 
-        <select>
-            <option>Taille 40</option>
-            <option>Taille 41</option>
-            <option>Taille 42</option>
-            <option>Taille 43</option>
+        <select class="size">
+            <option>40</option><option>41</option><option>42</option><option>43</option>
         </select>
 
-        <select>
-            <option>Noir</option>
-            <option>Blanc</option>
-            <option>Rouge</option>
+        <select class="color">
+            <option>Noir</option><option>Blanc</option><option>Rouge</option>
         </select>
 
         <div class="stars">★★★★★</div>
 
-        <!-- IMPORTANT: button type="button" -->
-        <button type="button" class="order-btn">Commander</button>
+        <div class="badges">
+            <span>🚚 Livraison rapide</span>
+            <span>💵 Paiement à la livraison</span>
+        </div>
+
+        <button class="order-btn">Commander</button>
+    </div>
+
+    <div class="product-card">
+        <img src="images/shoe2.jpg" alt="Sport Shoe Y">
+        <h3>Sport Shoe Y</h3>
+
+        <select class="size">
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+        </select>
+
+        <select class="color">
+            <option>Noir</option><option>Blanc</option><option>Bleu</option>
+        </select>
+
+        <div class="stars">★★★★★</div>
+
+        <div class="badges">
+            <span>🚚 Livraison rapide</span>
+            <span>💵 Paiement à la livraison</span>
+        </div>
+
+        <button class="order-btn">Commander</button>
     </div>
 
 </section>
 
-<!-- MODAL FORM (SAME PAGE) -->
+<!-- MODAL FORM -->
 <div class="modal" id="modal">
     <div class="modal-box">
         <span class="close">&times;</span>
+
         <h2>Formulaire de commande</h2>
+        <p id="selectedProduct"></p>
 
-        <input type="text" placeholder="Nom">
-        <input type="text" placeholder="Prénom">
-        <input type="text" placeholder="Adresse complète">
-        <input type="tel" placeholder="Téléphone">
-        <input type="text" placeholder="Ville">
+        <input id="nom" type="text" placeholder="Nom">
+        <input id="prenom" type="text" placeholder="Prénom">
+        <input id="adresse" type="text" placeholder="Adresse complète">
+        <input id="tel" type="tel" placeholder="Téléphone">
+        <input id="ville" type="text" placeholder="Ville">
 
-        <button class="submit">Confirmer</button>
+        <button id="confirm">Confirmer via WhatsApp</button>
     </div>
 </div>
 
